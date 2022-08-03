@@ -10,10 +10,14 @@
       type="text/css"
       href="{% static 'styles/output.css' %}"
     />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
     <title>Boucle Studio</title>
   </head>
   <body>
-    {% include 'navbar.html' %}
-    {% block content %} {% endblock %}
+    {% include 'navbar.html' %} {% block content %} {% endblock %}
   </body>
 </html>
