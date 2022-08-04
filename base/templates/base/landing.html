@@ -17,7 +17,7 @@
           <div class="flex items-center justify-center w-full h-full">
             <div class="text-center">
               <h1
-                class="select-none text-5xl font-semibold text-white lg:text-6xl lg:max-w-xl"
+                class="select-none text-5xl font-bold text-white lg:text-6xl lg:max-w-xl"
               >
                 Tranformamos tu ropa en mal estado en tu
                 <span
@@ -32,14 +32,64 @@
               </button>
             </div>
           </div>
+        </div>
+        <img
+          class="absolute bottom-6 left-1/2 transform -translate-x-1/2 lg:left-auto lg:-translate-x-0 lg:right-6"
+          src="{% static '/images/fffIcon.png' %}"
+          draggable="false"
+        />
       </div>
-      <img
-      class="absolute bottom-6 left-1/2 transform -translate-x-1/2 lg:left-auto lg:-translate-x-0 lg:right-6"
-      src="{% static '/images/fffIcon.png' %}"
-      draggable="false"
-    />
-  </div>
     </div>
   </header>
+  <!-- Our process -->
+  <div class="container mx-auto mt-28 px-6">
+    <h2 class="select-none text-4xl font-bold mb-8">Nuestro proceso</h2>
+    <div class="grid gap-8 grid-cols-1 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-4 lg:grid-rows-1 ">
+      <!-- Process 1 -->
+      <div class="space-y-4">
+        <div class="flex flex-row justify-start items-center space-x-4 pr-10">
+          <div class="rounded-full bg-cyan-600 w-6 h-6"></div>
+          <div class="border-b-8 border-cyan-600 border-dotted flex-1"></div>
+        </div>
+        <div class="space-y-2">
+          <h3 class="text-xl">📲 Recepción</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </div>
+      </div>
+      <!-- Process 2 -->
+      <div class="space-y-4">
+        <div class="flex flex-row justify-start items-center space-x-4 pr-10">
+          <div class="rounded-full bg-cyan-600 w-6 h-6"></div>
+          <div class="border-b-8 border-cyan-600 border-dotted flex-1"></div>
+        </div>
+        <div class="space-y-2">
+          <h3 class="text-xl">🗒 Evaluación</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </div>
+      </div>
+      <!-- Process 3 -->
+      <div class="space-y-4">
+        <div class="flex flex-row justify-start items-center space-x-4 pr-10">
+          <div class="rounded-full bg-cyan-600 w-6 h-6"></div>
+          <div class="border-b-8 border-cyan-600 border-dotted flex-1"></div>
+        </div>
+        <div class="space-y-2">
+          <h3 class="text-xl">🪡 Intervención</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </div>
+      </div>
+      <!-- Process 4 -->
+      <div class="space-y-4">
+        <div class="flex flex-row justify-start items-center space-x-4 pr-10">
+          <div class="rounded-full bg-cyan-600 w-6 h-6"></div>
+          <div class="border-b-8 border-cyan-600 border-dotted flex-1"></div>
+        </div>
+        <div class="space-y-2">
+          <h3 class="text-xl">✅ Entrega</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 {% endblock %}
