@@ -39,6 +39,9 @@ INSTALLED_APPS = [
 
     # Base app config
     'base.apps.BaseConfig',
+
+    #Installed apps
+    'django_feather',
 ]
 
 MIDDLEWARE = [

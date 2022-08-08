@@ -1,4 +1,4 @@
-{% extends 'main.html' %} {% load static %} {% block content %}
+{% extends 'main.html' %} {% load static %} {% load icon %} {% block content %}
 <main>
   <!-- <h1 class="text-3xl font-bold underline text-orange-700">{{message}}</h1>
   <h1 class="text-5xl text-red-600">Hola mundo!</h1>
@@ -44,7 +44,9 @@
   <!-- Our process -->
   <div class="container mx-auto mt-28 px-6">
     <h2 class="select-none text-4xl font-bold mb-8">Nuestro proceso</h2>
-    <div class="grid gap-8 grid-cols-1 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-4 lg:grid-rows-1 ">
+    <div
+      class="grid gap-8 grid-cols-1 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-4 lg:grid-rows-1"
+    >
       <!-- Process 1 -->
       <div class="space-y-4">
         <div class="flex flex-row justify-start items-center space-x-4 pr-10">
@@ -91,5 +93,78 @@
       </div>
     </div>
   </div>
+  <!-- Advantages -->
+  <div class="container mx-auto mt-28 px-6">
+    <div class="flex flex-col justify-center items-center">
+      <div class="lg:max-w-lg text-center pb-12">
+        <h2 class="select-none text-4xl font-bold mb-8">
+          Soluciones hechas a tu medida
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto
+          nulla iusto aliquam! Ratione iure voluptate modi.
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-wrap justify-center text-center">
+      <div
+        class="flex flex-col space-y-8 md:flex-row justify-between md:space-x-8 md:space-y-0"
+      >
+        <div class="space-y-2 flex flex-col items-center flex-1">
+          {% icon "clock" class="w-10 h-auto text-cyan-600" height="8" width="8" %}
+          <h3 class="text-xl font-semibold">Entrega asegurada</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="space-y-2 flex flex-col items-center flex-1">
+          {% icon "globe" class="w-10 h-auto text-cyan-600" height="8" width="8" %}
+          <h3 class="text-xl font-semibold">Trabajo sustentable</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="space-y-2 flex flex-col items-center flex-1">
+          {% icon "heart" class="w-10 h-auto text-cyan-600" height="8" width="8" %}
+          <h3 class="text-xl font-semibold">Amamos lo que hacemos</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="space-y-2 flex flex-col items-center flex-1">
+          {% icon "zap" class="w-10 h-auto text-cyan-600" height="8" width="8" %}
+          <h3 class="text-xl font-semibold">Trabajo veloz</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Call to action -->
+  <div class="container mx-auto mt-28 px-6">
+    <div class="flex flex-col md:flex-row bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-2xl">
+      <div class="flex-1 p-20">
+        <h2 class="select-none text-4xl font-bold mb-8">
+          Cotiza tu prenda sin salir de tu casa
+        </h2>
+        <div class="space-y-8">
+          <p>
+            Nuestra plataforma te permite compartir el estado de tus prendas, agregar comentarios y obtener una cotización del proyecto. Una vez apruebes el proyecto puedes dejar tu prenda en alguna de nuestras sucursales. ✨
+          </p>
+          <a href="#" class="inline-flex space-x-1 px-3 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-200 transform border-solid border-2 border-white rounded-md"><span>Entrar</span> {% icon "arrow-right" class="w-5 h-auto text-white"%}</a>
+        </div>
+      </div>
+      <div class="flex-1">
+        <div
+        class="w-full bg-center bg-cover h-full relative rounded-bl-xl rounded-br-xl md:rounded-bl-none md:rounded-tr-xl overflow-hidden"
+        style="background-image: url({% static '/images/cta.png'%})"
+      >
+        <div class="bg-gray-900 bg-opacity-20 w-full h-full flex justify-center items-center">
+          <img
+            class="m-12"
+            src="{% static '/images/fffIcon.png' %}"
+            draggable="false"
+          />
+        </div>
+       
+      </div>  
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  {% include 'footer.html' %}
 </main>
 {% endblock %}
