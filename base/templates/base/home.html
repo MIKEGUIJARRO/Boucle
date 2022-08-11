@@ -3,6 +3,12 @@
   <header>
     <h1>Home</h1>
     <p>Welcome {{user.username}}</p>
+    <a
+        class="inline-block w-1/2 px-3 py-2 mx-1 text-sm font-medium leading-5 text-center text-white transition-colors duration-200 transform bg-red-500 rounded-md hover:bg-red-600 md:mx-0 md:w-auto"
+        href="{% url 'logout' %}"
+        >Logout</a
+      >
+  </header>
   {% include 'footer.html' %}
 </main>
 {% endblock %}
