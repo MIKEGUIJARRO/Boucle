@@ -1,0 +1,42 @@
+{% extends 'login.html' %} {% load static %} {% load icon %} {% block content %}
+<main>
+  <div class="flex flex-row h-screen">
+    <div class="flex-1 hidden md:block">
+      <div
+        class="w-full bg-center bg-cover h-full relative"
+        style="background-image: url({% static '/images/signup.png' %})"
+      >
+        <div
+          class="bg-gray-900 bg-opacity-20 w-full h-full flex justify-center items-end"
+        >
+            <div class="px-6 py-2 bg-white rounded-lg absolute top-6 left-6">
+                <a
+            class="text-2xl font-bold text-gray-800 transition-colors duration-200 transform lg:text-3xl hover:text-gray-700"
+            href="{% url 'landing' %}"
+            >Brand</a
+          >
+            </div>
+          <img
+            class="m-12"
+            src="{% static '/images/fffIcon.png' %}"
+            draggable="false"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="flex-1 flex justify-center items-center">
+        <div class="max-w-lg px-12 space-y-8">
+            <h1 class="select-none text-5xl font-bold">Crear una cuenta</h1>
+            <p>¿Necesitas un ajuste, un remiendo o un pequeño parche en alguna de tus prendas?</p>
+            <p>Nosotros te ayudamos ✨</p>
+            <a class="flex justify-center items-center px-6 py-2 bg-blue-600 text-white font-semibold space-x-2 rounded-xl" href="{% url 'social:begin' 'facebook' %}"><div class="p-2 bg-white rounded-full">{% icon "facebook" class="w-6 h-auto text-blue-600" %}</div><span>Entrar con Facebook</span></a>
+            <div class="border border-gray-200"></div>
+            <div class="flex space-x-4">
+                <p>¿Ya tienes una cuenta?</p>
+                <a href="{% url 'login'%}" class="text-cyan-600 font-semibold">Iniciar sesión</a>
+            </div>
+        </div>
+    </div>
+  </div>
+</main>
+{% endblock content %}
