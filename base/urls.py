@@ -9,5 +9,9 @@ urlpatterns = [
     path('signup/', views.signup, name='signup'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('social-auth', include('social_django.urls', namespace='social')),
-    path('home/', views.home, name='home')
+    path('home/', views.home, name='home'),
+    path('history/', views.history, name='history'),
+    path('configuration/', views.configuration, name='configuration'),
+    path('profile/', views.profile, name='profile'),
+    path('create-clothe/', views.createClothe, name='create-clothe'),
 ]
