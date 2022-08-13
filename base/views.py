@@ -24,8 +24,13 @@ def signup(request):
 
 @login_required
 def home(request):
-    print(request.user)
-    return render(request, 'base/home.html')
+    """ Conectar a base de datos """
+    """ Almacenar clothes en variable """
+    """ Agregar clothes en context """
+    context = {'data': [
+        
+    ]}
+    return render(request, 'base/home.html', context)
     
 @login_required
 def createClothe(request):

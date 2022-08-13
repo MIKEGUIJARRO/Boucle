@@ -1,25 +1,13 @@
 {% load icon %}
-<div class="flex flex-col w-64 h-screen py-8 bg-white border-r">
-  <h2 class="text-3xl font-semibold text-center text-gray-800">Brand</h2>
-
-  <div class="flex flex-col items-center mt-6 -mx-2">
-    <img
-      class="object-cover w-24 h-24 mx-2 rounded-full"
-      src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-      alt="avatar"
-    />
-    <h4 class="mx-2 mt-2 font-medium text-gray-800 hover:underline">
-      John Doe
-    </h4>
-    <p class="mx-2 mt-1 text-sm font-medium text-gray-600 hover:underline">
-      john@example.com
-    </p>
-  </div>
+<div class="flex flex-col w-64 h-screen py-8 bg-white border-r space-y-24">
+  <a class="px-2 py-2" href="{% url 'home' %}">
+    <h2 class="text-3xl font-semibold text-center text-gray-800">Brand</h2>
+  </a>
 
   <div class="flex flex-col justify-between flex-1 mt-6">
     <nav class="space-y-4 px-4">
       <a
-        class="flex items-center px-4 py-2 rounded-lg {% if request.resolver_match.url_name == 'home' %}text-white bg-cyan-600{% endif %}"
+        class="flex items-center px-4 py-2 rounded-lg {% if request.resolver_match.url_name == 'home' %}text-white bg-cyan-600{% else %}hover:bg-gray-200{% endif %}"
         href="{% url 'home' %}"
       >
         {% icon "home" height="24" width="24" %}
@@ -27,21 +15,21 @@
       </a>
 
       <a
-        class="flex items-center px-4 py-2 rounded-lg {% if request.resolver_match.url_name == 'history' %}text-white bg-cyan-600{% endif %}"
+        class="flex items-center px-4 py-2 rounded-lg {% if request.resolver_match.url_name == 'history' %}text-white bg-cyan-600{% else %}hover:bg-gray-200{% endif %}"
         href="{% url 'history' %}"
       >
         {% icon "list" height="24" width="24" %}
         <span class="mx-4 font-medium">Historial</span>
       </a>
       <a
-        class="flex items-center px-4 py-2 rounded-lg {% if request.resolver_match.url_name == 'configuration' %}text-white bg-cyan-600{% endif %}"
+        class="flex items-center px-4 py-2 rounded-lg {% if request.resolver_match.url_name == 'configuration' %}text-white bg-cyan-600{% else %}hover:bg-gray-200{% endif %}"
         href="{% url 'configuration' %}"
       >
         {% icon "settings" height="24" width="24" %}
         <span class="mx-4 font-medium">Configuración</span>
       </a>
       <a
-        class="flex items-center px-4 py-2 rounded-lg {% if request.resolver_match.url_name == 'profile' %}text-white bg-cyan-600{% endif %}"
+        class="flex items-center px-4 py-2 rounded-lg {% if request.resolver_match.url_name == 'profile' %}text-white bg-cyan-600{% else %}hover:bg-gray-200{% endif %}"
         href="{% url 'profile' %}"
       >
         {% icon "user" height="24" width="24" %}
@@ -49,7 +37,7 @@
       </a>
       <hr class="my-6 border-gray-200" />
       <a
-        class="flex items-center px-4 py-2 rounded-lg border-2 border-gray-200 {% if request.resolver_match.url_name == 'create-clothe' %}text-white bg-cyan-600 border-cyan-700{% endif %}"
+        class="flex items-center px-4 py-2 rounded-lg border-2 border-gray-200 {% if request.resolver_match.url_name == 'create-clothe' %}text-white bg-cyan-600{% else %}hover:bg-gray-200{% endif %}"
         href="{% url 'create-clothe' %}"
       >
         {% icon "plus-circle" height="24" width="24" %}
