@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'styles/output.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <title>Boucle Studio</title>
+  </head>
+  <body>
+    <div class="flex"> 
+        {% include 'sidebar.html' %}
+        <div class="flex-1 relative overflow-auto">
+          <div class="absolute top-0 bottom-0 left-0 right-0 ">
+            {% block content %} {% endblock %}
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

@@ -1,8 +1,85 @@
-{% extends 'main.html' %} {% load static %} {% load icon %} {% block content %}
+{% extends 'main_home.html' %} {% load static %} {% load icon %} 
+{% block content %}
 <main>
-  <header>
-    <h1>Home</h1>
-    <p>Welcome {{user.username}}</p>
-  {% include 'footer.html' %}
-</main>
+  <div class="my-8">
+    <div class="mx-16 space-y-4">
+      <h1 class="font-bold text-4xl">Hola {{user.first_name}}!</h1>
+      <a
+        class="inline-block px-4 py-2 rounded-lg text-white bg-cyan-600 hover:bg-cyan-700"
+        href="#"
+        >Cotizar Prenda ✨</a
+      >
+    </div>
+    <div class="relative mt-28">
+      <div class="mx-16 flex items-center space-x-6">
+        <h2 class="font-bold text-4xl">Próximos pedidos</h2>
+        <div class="w-10 h-10 rounded-md border-2 border-gray-200 flex justify-center items-center">
+          <span class="font-bold text-2xl">{{clothes_count}}</span>
+        </div>
+      </div>
+      <!-- Clothe's cards -->
+     
+      {% if data|length > 0%}
+      <div class="overflow-hidden mt-0">
+        <div class="flex flex-row overflow-x-scroll py-16 snap-x snap-proximity">
+          {% for item in data %}
+          <a href="#" class="snap-center {% if forloop.first %}ml-16{% else %}ml-8{% endif %} {% if forloop.last %}mr-16{% endif %}">
+            <div class="min-w-max rounded-xl bg-white shadow-lg hover:shadow-2xl hover:outline-gray-200 transition-all overflow-hidden">
+              <div class="p-4 space-y-4">
+                <div style="background-image: url({% static '/images/hero.png'%})" class="h-[12rem] rounded-lg"></div>
+              <div class="flex justify-between">
+                <h3 class="font-bold">{{item.title}}</h3>
+                <div class="px-4 py-2 rounded-3xl bg-amber-400 font-semibold text-xs">{{item.category}}</div>
+              </div>
+              <div class="flex space-x-2 items-center">
+                <span class="text-xs font-semibold {% if item.stage == 'stage-1'%}text-cyan-600{% endif %}">Etapa 1</span>
+                {% icon "arrow-right" height="18" width="18" %}
+                <span class="text-xs font-semibold {% if item.stage == 'stage-2'%}text-cyan-600{% endif %}">Etapa 2</span>
+                {% icon "arrow-right" height="18" width="18" %}
+                <span class="text-xs font-semibold {% if item.stage == 'stage-3'%}text-cyan-600{% endif %}">Etapa 3</span>
+                {% icon "arrow-right" height="18" width="18" %}
+                <span class="text-xs font-semibold {% if item.stage == 'stage-4'%}text-cyan-600{% endif %}">Etapa 4</span>
+              </div>
+              </div>
+              <div class="flex justify-between items-center bg-gray-600 p-4 text-white">
+                <p>📦 {{item.dropOffDate}}</p>
+                {% icon "arrow-right" height="18" width="18" %}
+                <p>✅ {{item.pickUpDate}}</p>
+                <div class="w-1 h-1 rounded-lg bg-gray-100"></div>
+                <p class="text-gray-400">{{item.pickUpHour}}</p>
+              </div>
+            </div>
+          </a>
+          {% endfor %}
+          <div></div>
+        </div>
+      </div>
+      {% else %}
+      <div class="px-16 py-16">
+        <h3 class="inline-block text-lg p-4 bg-gray-200 rounded-lg">Aún no has cotizado ninguna prenda 👀 ...</h3>
+      </div>
+
+      {% endif %}
+
+      <!-- Banner -->
+      <div class="pb-8 mx-16">
+        <div
+        class="w-full bg-center bg-cover h-full relative rounded-bl-xl rounded-xl overflow-hidden"
+        style="background-image: url({% static '/images/thanks.png'%})"
+        >
+        <div class="p-12 bg-gray-800 bg-opacity-20 w-full h-full flex flex-col justify-center items-start text-white">
+          <div class="space-y-6 max-w-lg">
+            <h2 class="text-2xl font-bold">Gracias por darle una segunda oportunidad a tus prendas ✨</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut suscipit mauris sed diam tincidunt, sed volutpat risus rhoncus. Morbi et leo quis velit pharetra lobortis quis sit amet purus. Sed at velit orci. Duis tincidunt a augue non tristique. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sagittis sem at ultricies rhoncus. In sit amet nibh lectus. Sed ornare eu nisl lacinia posuere</p>
+          </div>
+          <img
+            class="absolute top-12 right-12 hidden xl:block"
+            src="{% static '/images/fffIcon.png' %}"
+            draggable="false"
+          />
+        </div>
+      </div>
+      </div>
+  </header>
+</div>
 {% endblock %}

@@ -62,7 +62,11 @@ LOGOUT_REDIRECT_URL='login'
 SOCIAL_AUTH_FACEBOOK_KEY = '602748527883902'
 SOCIAL_AUTH_FACEBOOK_SECRET = '08131825653fc1d59f1f3a4cf52f182f'
 
-SOCIAL_AUTH_FACEBOOK_SCOPE=['email']
+SOCIAL_AUTH_FACEBOOK_SCOPE=['email','public_profile']
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
+  'fields': 'id, name, email, age_range, picture',
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -1,0 +1,48 @@
+{% load icon %}
+<div class="flex flex-col w-64 h-screen py-8 bg-white border-r space-y-24">
+  <a class="px-2 py-2" href="{% url 'home' %}">
+    <h2 class="text-3xl font-semibold text-center text-gray-800">Brand</h2>
+  </a>
+
+  <div class="flex flex-col justify-between flex-1 mt-6">
+    <nav class="space-y-4 px-4">
+      <a
+        class="flex items-center px-4 py-2 rounded-lg {% if request.resolver_match.url_name == 'home' %}text-white bg-cyan-600{% else %}hover:bg-gray-200{% endif %}"
+        href="{% url 'home' %}"
+      >
+        {% icon "home" height="24" width="24" %}
+        <span class="mx-4 font-medium">Inicio</span>
+      </a>
+
+      <a
+        class="flex items-center px-4 py-2 rounded-lg {% if request.resolver_match.url_name == 'history' %}text-white bg-cyan-600{% else %}hover:bg-gray-200{% endif %}"
+        href="{% url 'history' %}"
+      >
+        {% icon "list" height="24" width="24" %}
+        <span class="mx-4 font-medium">Historial</span>
+      </a>
+      <a
+        class="flex items-center px-4 py-2 rounded-lg {% if request.resolver_match.url_name == 'configuration' %}text-white bg-cyan-600{% else %}hover:bg-gray-200{% endif %}"
+        href="{% url 'configuration' %}"
+      >
+        {% icon "settings" height="24" width="24" %}
+        <span class="mx-4 font-medium">Configuración</span>
+      </a>
+      <a
+        class="flex items-center px-4 py-2 rounded-lg {% if request.resolver_match.url_name == 'profile' %}text-white bg-cyan-600{% else %}hover:bg-gray-200{% endif %}"
+        href="{% url 'profile' %}"
+      >
+        {% icon "user" height="24" width="24" %}
+        <span class="mx-4 font-medium">Perfil</span>
+      </a>
+      <hr class="my-6 border-gray-200" />
+      <a
+        class="flex items-center px-4 py-2 rounded-lg border-2 border-gray-200 {% if request.resolver_match.url_name == 'create-clothe' %}text-white bg-cyan-600{% else %}hover:bg-gray-200{% endif %}"
+        href="{% url 'create-clothe' %}"
+      >
+        {% icon "plus-circle" height="24" width="24" %}
+        <span class="mx-4 font-medium">Cotizar prenda</span>
+      </a>
+    </nav>
+  </div>
+</div>

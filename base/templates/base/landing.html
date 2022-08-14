@@ -1,12 +1,14 @@
-{% extends 'main.html' %} {% load static %} {% load icon %} {% block content %}
+{% extends 'main_landing.html' %} {% load static %} {% load icon %} {% block content %}
+
 <main>
   <!-- <h1 class="text-3xl font-bold underline text-orange-700">{{message}}</h1>
   <h1 class="text-5xl text-red-600">Hola mundo!</h1>
   <img src="{% static '/images/mike.png' %}"/>
   <p>Hola amigo!</p> -->
+  {% include 'navbar.html' %}
 
   <!-- Hero -->
-
+    
   <header>
     <div
       class="w-full bg-center bg-cover h-[40rem] relative"
