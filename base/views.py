@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
-
+from django.db.models import Q
+from .models import Cloth
 
 def landing(request):
     return render(request, 'base/landing.html')
@@ -24,12 +25,11 @@ def signup(request):
 
 @login_required
 def home(request):
-    """ Conectar a base de datos """
-    """ Almacenar clothes en variable """
-    """ Agregar clothes en context """
-    context = {'data': [
-        
-    ]}
+    user = request.user
+    clothes = Cloth.objects.filter(owner=user)
+    clothes_count = clothes.count()
+   
+    context = {'data': clothes, 'clothes_count':clothes_count}
     return render(request, 'base/home.html', context)
     
 @login_required
